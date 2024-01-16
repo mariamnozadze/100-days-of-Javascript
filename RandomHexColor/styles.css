@@ -2,9 +2,9 @@
 
 :root {
   --white: #fff;
-  --black: #1c2b2d;
+  --black: #282828;
   --blue: #31326f;
-  --light-blue: #005490;
+  --light-blue: #04365a;
   --color-primary: #9d0191;
   --color-sec: #db6400;
   --grey: #eee;
@@ -48,7 +48,7 @@ img {
   width: 40rem;
   border: 1px solid var(--grey);
   padding: 1rem;
-  background-color: var(--light-blue);
+  background-color: var(--dark-grey);
   color: var(--white);
   text-align: center;
   border-radius: 5px;
@@ -76,13 +76,7 @@ img {
   cursor: pointer;
 }
 
-button.subtract {
-  background-color: orangered;
-}
 button.reset {
   background-color: var(--white);
   color: var(--black);
-}
-button.add {
-  background-color: green;
 }
