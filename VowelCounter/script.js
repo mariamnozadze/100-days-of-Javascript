@@ -13,9 +13,7 @@ function countVowel() {
   let count = 0;
 
   for (let char of word) {
-    // Check if the character is a vowel
     if (vowels.includes(char)) {
-      // Increment the count if it's a vowel
       count++;
     }
   }
