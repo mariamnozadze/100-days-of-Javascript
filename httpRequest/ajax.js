@@ -3,21 +3,19 @@ btn.addEventListener("click", getUsers);
 
 // CREATE FUNCTION GETUSERS
 function getUsers(e) {
-    e.preventDefault();
+  e.preventDefault();
 
-    const http = new XMLHttpRequest();
+  const http = new XMLHttpRequest();
 
-    http.open("GET", "users.json", true);
+  http.open("GET", "users.json", true);
 
-    http.onload = function() {
-        if (this.status === 200) {
-            // console.log(this.responseText);
+  http.onload = function () {
+    if (this.status === 200) {
+      const users = JSON.parse(this.responseText);
 
-            const users = JSON.parse(this.responseText);
-
-            let output = "";
-            users.forEach(function(user) {
-                output += `
+      let output = "";
+      users.forEach(function (user) {
+        output += `
                     <hr>
                     <ul>
                         <li>ID: ${user.id}</li>
@@ -26,12 +24,11 @@ function getUsers(e) {
                         <li>Email: ${user.email}</li>
                     </ul>
                 `;
-            })
+      });
 
-            document.getElementById("users").innerHTML = output;
-
-        }
+      document.getElementById("users").innerHTML = output;
     }
+  };
 
-    http.send();
+  http.send();
 }
