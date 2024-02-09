@@ -1,20 +1,17 @@
-// LOAD ALL USERS
-
 const btn = document.getElementById("btn");
 btn.addEventListener("click", getUsers);
 
 function getUsers(e) {
-    e.preventDefault();
+  e.preventDefault();
 
-    fetch("users.json")
-        .then(function(response) {
-            return response.json();
-        })
-        .then(function(data) {
-            // console.log(data);
-            let output = "";
-            data.forEach(function(user) {
-                output += `
+  fetch("users.json")
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      let output = "";
+      data.forEach(function (user) {
+        output += `
                     <hr>
                     <ul>
                         <li>ID: ${user.id}</li>
@@ -23,8 +20,7 @@ function getUsers(e) {
                         <li>Email: ${user.email}</li>
                     </ul>
                 `;
-
-            })
-            document.getElementById("users").innerHTML = output;
-        })
+      });
+      document.getElementById("users").innerHTML = output;
+    });
 }
